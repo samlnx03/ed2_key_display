@@ -1,0 +1,58 @@
+// anodos comunes
+NET "anodos[0]" LOC="F12";
+NET "anodos[1]" LOC="J12";
+NET "anodos[2]" LOC="M13";
+NET "anodos[3]" LOC="K14";
+
+// siete segmentos y dot point
+NET "disp_7seg_a_g_dp[7]" LOC="L14"; // a
+NET "disp_7seg_a_g_dp[6]" LOC="H12";
+NET "disp_7seg_a_g_dp[5]" LOC="N14";
+NET "disp_7seg_a_g_dp[4]" LOC="N11";
+NET "disp_7seg_a_g_dp[3]" LOC="P12";
+NET "disp_7seg_a_g_dp[2]" LOC="L13";
+NET "disp_7seg_a_g_dp[1]" LOC="M12";	// g
+NET "disp_7seg_a_g_dp[0]" LOC="N13";	// dp
+
+// slide switches 3:0
+//NET "databcd[0]" LOC="P11";	//sw0
+//NET "databcd[1]" LOC="L3";		//sw1
+//NET "databcd[2]" LOC="K3";		//sw2
+//NET "databcd[3]" LOC="B4";		//sw3
+// slide switches 7:6
+//NET "bufdestino[0]" LOC="E2";		// sw6
+//NET "bufdestino[1]" LOC="N3";		// sw7
+
+//NET "sw<5>" LOC = "F3";  # Bank = 3, Signal name = SW5
+//NET "sw<4>" LOC = "G3";  # Bank = 3, Signal name = SW4
+
+
+//NET "reset" LOC = "A7";  # Bank = 1, Signal name = BTN3
+//NET "btn<2>" LOC = "M4";  # Bank = 0, Signal name = BTN2
+//NET "btn<1>" LOC = "C11"; # Bank = 2, Signal name = BTN1
+//NET "load" LOC = "G12"; # Bank = 0, Signal name = BTN0
+
+//btn0 eventos a contar
+//NET "evento" CLOCK_DEDICATED_ROUTE=TRUE;
+NET "reset" LOC="G12";
+//NET "evento" LOC="C8";	// 1 Hz.
+
+// clk para multiplexar
+//NET "reloj" CLOCK_DEDICATED_ROUTE=TRUE;
+//NET "reloj" LOC="C11";
+NET "reloj" LOC="B8";  // 50 Mhz
+
+# Pin assignment for PS2
+NET "clk"    LOC = "B1"   | DRIVE = 2  | PULLUP ; # Bank = 3, Signal name = PS2C
+NET "data"    LOC = "C3"   | DRIVE = 2  | PULLUP ; # Bank = 3, Signal name = PS2D
+NET "clk" CLOCK_DEDICATED_ROUTE = FALSE;
+
+# Pin assignment for LEDs
+#NET "led[7]" LOC = "G1" ; # Bank = 3, Signal name = LD7
+#NET "led[6]" LOC = "P4" ; # Bank = 2, Signal name = LD6
+#NET "led[5]" LOC = "N4" ;  # Bank = 2, Signal name = LD5
+#NET "led[4]" LOC = "N5" ;  # Bank = 2, Signal name = LD4
+#NET "led[3]" LOC = "P6" ; # Bank = 2, Signal name = LD3
+#NET "led[2]" LOC = "P7" ; # Bank = 3, Signal name = LD2
+#NET "led[1]" LOC = "M11" ; # Bank = 2, Signal name = LD1
+#NET "led[0]" LOC = "M5" ;  # Bank = 2, Signal name = LD0
